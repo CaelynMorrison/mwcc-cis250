@@ -41,7 +41,7 @@ const char* vector_get(const StringVector *vec, size_t index) {
 }
 
 void vector_free(StringVector *vec) {
-    int size = vec->size - 1;
+    int size = vec->size;
     for(int i = 0; i < size; i++) {
         if (vec->data[i] != NULL) {
             free(vec->data[i]);
