@@ -8,7 +8,7 @@ StringVector* vector_create(size_t initial_capacity) {
     if (new_vector == NULL) {
         return NULL;
     }
-    new_vector->data = (char**)malloc(initial_capacity * sizeof(char));
+    new_vector->data = (char**)malloc(initial_capacity * sizeof(char*));
     if (new_vector->data == NULL) {
         return NULL;
     }
@@ -19,8 +19,8 @@ StringVector* vector_create(size_t initial_capacity) {
 
 int vector_push(StringVector *vec, const char *str){
     if (vec->size == vec->capacity) {
-        vec = realloc(vec, vec->capacity * sizeof(char) * 2);
-        if (vec == NULL) {
+        vec->data = realloc(vec->data, vec->capacity * sizeof(char*) * 2);
+        if (vec->data == NULL) {
             return 0;
         }
     }
@@ -45,8 +45,7 @@ void vector_free(StringVector *vec) {
     for(int i = 0; i < size; i++) {
         if (vec->data[i] != NULL) {
             free(vec->data[i]);
-        }
-        
+        } 
     }
     free(vec->data);
     free(vec);
