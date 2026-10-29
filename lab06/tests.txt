@@ -1,7 +1,5 @@
 pwd
-iinvali
-
 date
 ls -l
-#df -h
-#ps -eo pid,ppid,comm
+df -h
+ps -eo pid,ppid,comm

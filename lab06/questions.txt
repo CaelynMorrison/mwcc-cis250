@@ -1,0 +1,24 @@
+1. fgets() is used to read the test plan because fgets() reads an entire line
+ from a file at one time.
+
+2. execvp() takes the arguments in the form of an array so the input text needs
+ to be parsed to fit those specifications.
+
+3. fork() returns the parent PID to the new child process, the new child PID to
+ the parent process, or -1 if there was an error creating the new process.
+
+4. When execvp() succeeds the child process is replaced by the program called by execvp.
+
+5. The parent process must call wait() because otherwise the child process could become
+ either an orphan or zombie process depending on whether it or the parent process finishes
+ first.
+
+6. The test runner determines whether a test passes or fails based on the exit code of the
+ child process after running execvp.
+
+7. When a test cannot be executed the runner should log the failure and continue to the
+ next test. One test failing does not mean there is no valuable information to get from
+ the remaining tests.
+
+8. Launching multiple tests without waiting for the completion of the prior tests could
+ strain or exceed the resources on the system being tested.

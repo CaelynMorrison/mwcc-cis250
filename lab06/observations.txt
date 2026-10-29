@@ -1,0 +1,50 @@
+Experiment 1:
+    The tests execute in the order specified and all tests pass.
+
+    ========================
+      TEST SUMMARY
+    ========================
+      Tests Executed:   5
+      Tests Passed:     5
+      Tests Failed:     0
+    ========================
+
+Experiment 2:
+    The blank lines and comment lines are skipped and the remaining 
+    tests execute in the order specified and all tests pass.
+
+    ========================
+      TEST SUMMARY
+    ========================
+      Tests Executed:   5
+      Tests Passed:     5
+      Tests Failed:     0
+    ========================
+
+Experiment 3:
+    The invalid_test_program command fails and is logged as a failure.
+    The other tests all pass as expected.
+
+    ========================
+      TEST SUMMARY
+    ========================
+      Tests Executed:   6
+      Tests Passed:     5
+      Tests Failed:     1
+    ========================
+
+Experiment 4:
+    The tests all execute in the new order and all tests pass.
+
+    ========================
+      TEST SUMMARY
+    ========================
+      Tests Executed:   5
+      Tests Passed:     5
+      Tests Failed:     0
+    ========================   
+
+Experiment 5:
+    An error is received stating the file does not exist and the program exits.
+
+    open: No such file or directory
